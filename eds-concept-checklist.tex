@@ -1,0 +1,700 @@
+\documentclass{article}
+\usepackage[a4paper,left=10mm,right=10mm,bottom=20mm,top=35mm,headheight=65pt]{geometry}
+\usepackage{multicol}
+\usepackage{blindtext}
+\usepackage{xcolor}
+\usepackage{avant}
+\usepackage{fancyhdr}
+\usepackage{relsize}
+\usepackage{ifthen}
+\usepackage{wasysym}
+\usepackage{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}
+\setlength\parindent{0em}
+\setlength{\parskip}{0.25ex}
+%\setlength\leftskip{-1em}
+
+\definecolor{maincolor}{RGB}{234,135,11} % orange
+%\definecolor{maincolor}{RGB}{164,136,6} % E&C Theme color
+%\definecolor{maincolor}{RGB}{38,147,33} % green
+%\definecolor{maincolor}{RGB}{132,16,191} % darkorchid
+\definecolor{gray}{RGB}{93,93,93}
+\definecolor{cgray}{RGB}{64,64,64}
+\definecolor{sgray}{RGB}{128,128,128}
+\newcommand{\discipline}[1]{\textcolor{maincolor}{\Large\textsc{#1}}\par}  % DISCIPLINE
+\newcommand{\topic}[1]{\textcolor{maincolor}{\large\textbf{#1}}\par}       % Topic
+\newcommand{\subtopic}[1]{\textcolor{gray}{\normalsize\textbf{#1}}\par}    % Subtopic
+\newcommand{\cconcept}[1]{\Square\ \textcolor{cgray}{\normalsize{#1}}\par} % Core Concept
+\newcommand{\sconcept}[1]{\Square\ \textcolor{sgray}{\normalsize{#1}}\par} % Specialized Concept
+
+%\renewcommand{\smallskip}{\vspace{1ex}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\ifthenelse{\value{page}=1}{\discipline{Discipline}\topic{Topic}\subtopic{Subtopic}\cconcept{Core Concept} \sconcept{Specialized Concept}\vspace{-1em}}{\today}}
+\lhead{\ifthenelse{\value{page}=1}{\vfill \LARGE{\textcolor{maincolor}{\textbf{Environmental Data Science}} Concept Checklist} \vfill \normalsize{\today} \vfill}{\LARGE{\textcolor{maincolor}{\textbf{Environmental Data Science}} Concept Checklist}}}
+\cfoot{\thepage}
+\renewcommand{\footrulewidth}{0.5pt}
+
+% adapted from Kyle Bradbury's Data Science Concept Checklist (June 5, 2016)
+% https://www.kylebradbury.org/docs/resources/Data-Science-Checklist.pdf
+
+\title{Environmental Data Science Concept Checklist}
+
+\begin{document}
+
+\begin{flushleft}
+
+\hangindent=1em
+
+\begin{multicols*}{3}
+
+\discipline{Mathematics}
+\medskip
+
+\topic{Calculus}
+\smallskip
+
+\cconcept{Derivatives}
+\cconcept{Integration}
+\cconcept{Polar coordinates}
+\cconcept{Complex numbers}
+\cconcept{Gradient}
+\sconcept{Limits}
+\sconcept{Sequences}
+\sconcept{Series}
+\sconcept{Multiple integrals}
+\sconcept{Vector calculus}
+\sconcept{Partial derivatives}
+\sconcept{Differential equations}
+\sconcept{Jacobian matrix}
+\sconcept{Hessian matrix}
+\medskip
+
+\topic{Linear Algebra}
+\smallskip
+
+\cconcept{Systems of linear equations}
+\cconcept{Vectors}
+\cconcept{Matrix multiplication}
+\cconcept{Projection}
+\cconcept{Inner products}
+\cconcept{Outer products}
+\cconcept{Trace, rank, and transpose}
+\cconcept{Linear independence}
+\cconcept{Linear transformations}
+\sconcept{Determinant}
+\sconcept{Matrix inversion}
+\sconcept{Change of basis}
+\sconcept{Singular values}
+\sconcept{Eigenvalues and Eigenvectors}
+\sconcept{Orthogonality}
+\bigskip
+
+\discipline{Machine Learning \& Statistics}
+\medskip
+
+\topic{Probability \& Statistics}
+\smallskip
+
+\subtopic{Probability Theory}
+\cconcept{Set theory}
+\cconcept{Sample spaces}
+\cconcept{Axioms of Probability}
+\cconcept{Combinatorics}
+\cconcept{Conditional probability}
+\cconcept{Correlation}
+\cconcept{Covariance}
+\cconcept{Expected value}
+\cconcept{Mean, median, standard deviation, and variance}
+\cconcept{Independence}
+\sconcept{Order statistics}
+\smallskip
+
+\subtopic{Random Variables}
+\cconcept{Discrete and continuous distributions}
+\cconcept{Probability mass/density function (PDF)}
+\cconcept{Cumulative distribution function / hazard function}
+\cconcept{Joint density}
+\sconcept{Moment generating function}
+\sconcept{Characteristic function}
+\smallskip
+
+\subtopic{Discrete Probability Distributions}
+\cconcept{Bernoulli}
+\cconcept{Binomial}
+\cconcept{Geometric}
+\cconcept{Poisson}
+\sconcept{Negative binomial}
+\sconcept{Hypergeometric}
+\smallskip
+
+\subtopic{Continuous Probability Distributions}
+\cconcept{Normal/Gaussian}
+\cconcept{Uniform}
+\cconcept{Exponential}
+\cconcept{Chi-squared}
+\cconcept{Student’s t}
+\sconcept{Weibull}
+\sconcept{Beta}
+\sconcept{Gamma}
+\sconcept{F}
+\smallskip
+
+\subtopic{Joint Probability Distributions}
+\cconcept{Multinomial}
+\cconcept{Multivariate normal}
+\sconcept{Dirichlet}
+\sconcept{Wishart}
+\smallskip
+
+\subtopic{Density Estimation}
+\cconcept{Mixture Model}
+\cconcept{Gaussian Mixture Model}
+\sconcept{Kernel Density Estimation}
+\sconcept{Parzen Window}
+\smallskip
+
+\subtopic{Goodness-of-fit Tests}
+\cconcept{All parameters known}
+\cconcept{All parameters unknown}
+\cconcept{Analysis of Variance}
+\sconcept{Multiple comparisons (Tukey’s Method)}
+\sconcept{F-test}
+\smallskip
+
+\subtopic{Hypothesis Testing}
+\cconcept{Type I and Type II Errors}
+\cconcept{Likelihood ratio test}
+\cconcept{Generalized likelihood ratio}
+\cconcept{Two sample t test}
+\sconcept{Power of the Test}
+\smallskip
+
+\subtopic{Estimation}
+\cconcept{Degrees of Freedom}
+\cconcept{Interval estimation}
+\cconcept{Maximum Likelihood}
+\sconcept{Method of Moments}
+\sconcept{Minimum variance estimators}
+\sconcept{Sufficient Statistics}
+\smallskip
+
+\subtopic{Bayesian Statistics}
+\cconcept{Bayes’ Theorem}
+\sconcept{Conjugate prior}
+\sconcept{Evidence approximation}
+\sconcept{Non informative priors}
+\smallskip
+
+\subtopic{Nonparametric Statistics}
+\sconcept{Friedman Test}
+\sconcept{Kruskal-Wallis Test}
+\sconcept{Sign Test}
+\sconcept{Testing of Randomness}
+\sconcept{Wilcoxon test}
+\smallskip
+
+\subtopic{Information theory}
+\sconcept{Mutual information}
+\sconcept{Entropy}
+\sconcept{Kullback-Leibler divergence}
+\smallskip
+
+\topic{Variable / Feature Selection}
+\smallskip
+
+\subtopic{Resampling Methods}
+\cconcept{Bootstrap}
+\cconcept{K-fold cross validation}
+\cconcept{Leave one out cross validation}
+\sconcept{Markov Chain Monte Carlo (MCMC)}
+\sconcept{Gibbs sampling}
+\sconcept{Jackknife}
+\smallskip
+
+\subtopic{Dimensionality Reduction}
+\cconcept{Curse of dimensionality}
+\cconcept{Principal components regression}
+\sconcept{Partial least squares}
+\smallskip
+
+\subtopic{Subset Selection}
+\cconcept{Best subset selection}
+\cconcept{Stepwise selection}
+\smallskip
+
+\subtopic{Regularization / Shrinkage}
+\cconcept{Lasso}
+\sconcept{Ridge Regression}
+\smallskip
+
+\topic{Supervised Learning}
+\smallskip
+
+\subtopic{Linear Regression}
+\cconcept{Least Squares}
+\cconcept{Confidence intervals}
+\cconcept{Correlation}
+\cconcept{P-value}
+\cconcept{R squared statistic}
+\cconcept{Residual}
+\cconcept{t-statistic}
+\smallskip
+
+\subtopic{Nonlinear Regression}
+\cconcept{Polynomial Regression}
+\sconcept{Nonparametric regression}
+\sconcept{Generalized additive models}
+\sconcept{Generalized linear model}
+\sconcept{Regression Splines}
+\sconcept{Smoothing Splines}
+\sconcept{Local regression}
+\sconcept{Fixed effects model}
+\sconcept{Random effects model}
+\sconcept{Mixed effects model}
+\sconcept{Basis Functions}
+\sconcept{Step Functions}
+\smallskip
+
+\subtopic{Performance Evaluation}
+\cconcept{Sensitivity}
+\cconcept{Specificity}
+\cconcept{Test and Training Error}
+\cconcept{Bias/Variance Tradeoff}
+\cconcept{Confusion Matrix}
+\cconcept{Receiver Operating Characteristic (ROC) curve}
+\smallskip
+
+\subtopic{Decision Theory}
+\cconcept{Likelihood Ratio Test}
+\sconcept{Minimax criterion}
+\sconcept{Committees}
+\sconcept{Decision fusion}
+\smallskip
+
+\subtopic{Density Estimation}
+\cconcept{Mixture Model}
+\cconcept{Gaussian Mixture Model}
+\sconcept{Kernel Density Estimation}
+\sconcept{Minimax criterion}
+\sconcept{Parzen Window}
+\smallskip
+
+\subtopic{Graphical Models}
+\cconcept{Markov Models}
+\sconcept{Hidden Markov Models}
+\sconcept{Bayesian Belief Network}
+\sconcept{Markov Random Fields}
+\smallskip
+
+\subtopic{Other Classification Methods}
+\cconcept{K Nearest Neighbors}
+\cconcept{Linear Discriminant Analysis}
+\cconcept{Fisher’s linear discriminant}
+\cconcept{Bayes Classifier}
+\cconcept{Naïve Bayes Classifier}
+\sconcept{Quadratic Discriminant Analysis}
+\sconcept{Partial Least Squares}
+\sconcept{Discriminant Analysis}
+\sconcept{Fuzzy Classification}
+\sconcept{Probit model}
+\smallskip
+
+\subtopic{Other Regression Methods}
+\sconcept{Logistic Regression (Logit model)}
+\sconcept{Multinomial Logistic Regression}
+\sconcept{Multiple Logistic Regression}
+\sconcept{Multinomial Logistic Regression}
+\sconcept{Multiple Logistic Regression}
+\sconcept{Relevance Vector Machines}
+\sconcept{Multiple Linear Regression}
+\smallskip
+
+\subtopic{Neural Networks}
+\cconcept{Perceptron}
+\sconcept{Error Backpropagation}
+\sconcept{Feed-forward network functions}
+\sconcept{Recurrent Neural Networks}
+\smallskip
+
+\subtopic{Support Vector Machines}
+\cconcept{Kernel Functions}
+\cconcept{Maximal Margin Classifier}
+\cconcept{Support Vector Classifier}
+\cconcept{Separating hyperplane}
+\sconcept{One versus all classification}
+\sconcept{One versus one classification}
+\sconcept{Polynomial kernel}
+\sconcept{Radial kernel}
+\sconcept{SVMs with more than 2 classes}
+\smallskip
+
+\subtopic{Ensemble Methods}
+\cconcept{Bagging}
+\cconcept{Boosting}
+\sconcept{AdaBoost}
+\sconcept{Stacking}
+\sconcept{Bayesian Model Averaging}
+\smallskip
+
+\subtopic{Classification and Regression Trees (CART)}
+\cconcept{Decision Trees}
+\cconcept{Gini Index}
+\cconcept{Out of Bag Error Estimation}
+\cconcept{Tree Pruning}
+\cconcept{Random Forests}
+\smallskip
+
+\topic{Unsupervised Learning}
+\smallskip
+
+\subtopic{Component Analysis}
+\cconcept{Dimensionality Reduction}
+\cconcept{Factor Analysis}
+\cconcept{Principal component analysis}
+\sconcept{Proportion of Variance Explained}
+\sconcept{Independent component analysis}
+\sconcept{Kernel Principal Component Analysis}
+\sconcept{Low-dimensional representations and Multidimensional scaling}
+\sconcept{Nonlinear component analysis}
+\sconcept{Self-organizing maps}
+\smallskip
+
+\subtopic{Clustering}
+\cconcept{K-means Clustering}
+\cconcept{Hierarchical clustering}
+\cconcept{Mean Shift}
+\sconcept{Agglomerative hierarchical clustering}
+\sconcept{Dendrograms}
+\sconcept{Dissimilarity measures}
+\sconcept{Expectation Maximization}
+\sconcept{Inversion}
+\sconcept{Linkages (complete, single, average, centroid)}
+\sconcept{On-line clustering}
+\sconcept{Stepwise-optimal hierarchical clustering}
+\smallskip
+
+\topic{Model Selection \& Evaluation}
+\smallskip
+
+\subtopic{Performance criteria}
+\cconcept{Adjusted R squared}
+\cconcept{Akaike Information Criterion}
+\sconcept{Bayesian Information Criterion}
+\sconcept{Mallow’s Cp}
+\sconcept{Variance Influence Factor}
+\smallskip
+
+\subtopic{Common Data Challenges}
+\cconcept{Collinearity}
+\cconcept{Multicollinearity}
+\cconcept{Outliers}
+\cconcept{High Leverage Points}
+\cconcept{Heteroscedasticity}
+\smallskip
+
+\subtopic{Selection techniques}
+\cconcept{Forward Selection}
+\cconcept{Backward Selection}
+\cconcept{Mixed Selection}
+\smallskip
+
+\topic{Time Series Modeling}
+\smallskip
+
+\subtopic{Characteristics of Time Series}
+\cconcept{Autocorrelation}
+\cconcept{Cross-correlation}
+\cconcept{Stationarity}
+\cconcept{Partial Autocorrelation}
+\smallskip
+
+\subtopic{Spectral Analysis and Filtering}
+\cconcept{Fourier Analysis / Fourier Transform}
+\cconcept{Spectral Density}
+\cconcept{Smoothing}
+\sconcept{Periodogram}
+\sconcept{Nonparametric Spectral Estimation}
+\sconcept{Wavelets}
+\smallskip
+
+\subtopic{Time series models}
+\cconcept{Autoregressive Models (AR)}
+\cconcept{Moving Average Models (MA)}
+\cconcept{Autoregressive Moving Average Models (ARMA)}
+\sconcept{Autoregressive Integrated Moving Average (ARIMA)}
+\sconcept{Seasonal ARIMA}
+\sconcept{Generalized Autoregressive Conditional Heteroskedasticity (GARCH) Models}
+\sconcept{Multivariate Autoregressive moving average with exogenous inputs (ARMAX) Models}
+\sconcept{Lagged regression models}
+\sconcept{State-space Models}
+\sconcept{Dynamic linear models with switching}
+\smallskip
+
+\topic{Other Concepts}
+\smallskip
+
+\subtopic{Other Statistical Learning Approaches}
+\sconcept{Reinforcement Learning}
+\sconcept{Online Learning}
+\sconcept{Kernel Methods}
+\sconcept{Anomaly Detection}
+\sconcept{Multiple Instance Learning}
+\sconcept{Bag of words model}
+\sconcept{Network analysis}
+\sconcept{Recommender systems}
+\smallskip
+
+\subtopic{Principles}
+\cconcept{No free lunch theorem}
+\cconcept{Occam’s Razor}
+\cconcept{No Silver Bullet}
+\bigskip
+
+\discipline{Programming}
+\medskip
+
+\topic{Basic Concepts \& Syntax}
+\smallskip
+
+\cconcept{Data types}
+\cconcept{Arrays}
+\cconcept{File Input/Output}
+\cconcept{Functions}
+\cconcept{Logic and conditionals}
+\cconcept{Loops}
+\cconcept{Math and assignment operators}
+\cconcept{Random number generation}
+\cconcept{Regular Expressions}
+\smallskip
+
+\topic{Languages}
+\smallskip
+
+\cconcept{Python}
+\cconcept{R}
+\cconcept{MATLAB}
+\cconcept{Shell scripting (e.g., Bash)}
+\sconcept{Julia}
+\sconcept{Mathematica}
+\sconcept{C/C++}
+\sconcept{FORTRAN}
+\sconcept{IDL}
+\smallskip
+
+\topic{Numerical Analysis}
+\smallskip
+
+\cconcept{Difference equations}
+\cconcept{Interpolation}
+\cconcept{Extrapolation}
+\cconcept{Methods for solving linear and nonlinear systems of equations}
+\sconcept{Monte Carlo methods}
+\sconcept{Numerical integration}
+\sconcept{Fourier analysis and spectral methods}
+\smallskip
+
+\topic{Optimization}
+\smallskip
+
+\cconcept{Gradient Descent}
+\cconcept{Linear Programming}
+\cconcept{Lagrange Multipliers}
+\sconcept{Boltzmann Learning}
+\sconcept{Boltzmann networks}
+\sconcept{Evolutionary methods}
+\sconcept{Genetic algorithms}
+\sconcept{Graphical models}
+\sconcept{Simulated annealing}
+\sconcept{Stochastic methods}
+\smallskip
+
+\topic{Version Control}
+\smallskip
+
+\cconcept{Git}
+\cconcept{Branch}
+\cconcept{Clone}
+\cconcept{Commit}
+\cconcept{Merge}
+\cconcept{Push}
+\cconcept{Pull}
+\smallskip
+
+\topic{Web Programming}
+\smallskip
+
+\cconcept{Application Programming Interface (API)}
+\cconcept{Markdown language}
+\sconcept{CSS}
+\sconcept{HTML}
+\sconcept{JavaScript}
+\sconcept{JSON}
+\sconcept{Scalable Vector Graphics (SVG)}
+\sconcept{XML}
+\sconcept{LaTeX}
+\sconcept{Model View Controller (MVC) architecture}
+\smallskip
+
+\topic{Web Scraping}
+\smallskip
+
+\sconcept{DOM parsing}
+\sconcept{HTML parsing}
+\sconcept{Computer vision web-page analyzers}
+\sconcept{Semantic annotation recognition}
+\smallskip
+
+\topic{Databases}
+\smallskip
+
+\subtopic{Relational Databases}
+\cconcept{SQL}
+\cconcept{Schema}
+\cconcept{Queries}
+\cconcept{Insert, Update, Select, Delete}
+\cconcept{Joins}
+\sconcept{Indexes}
+\sconcept{Integrity constraints}
+\sconcept{Authorizations}
+\sconcept{Transactions}
+\sconcept{Triggers}
+\sconcept{Views}
+\smallskip
+
+\subtopic{Big Data}
+\cconcept{Distributed File Systems (i.e. Hadoop)}
+\cconcept{Map Reduce}
+\sconcept{NoSQL}
+\sconcept{Extract, Transform, Load (ETL)}
+\smallskip
+
+\topic{Paradigms}
+\smallskip
+
+\subtopic{Object-oriented programming}
+\cconcept{Class}
+\cconcept{Inheritance}
+\cconcept{Methods}
+\cconcept{Properties}
+\smallskip
+
+\subtopic{Other approaches}
+\cconcept{Functional programming}
+\cconcept{Imperative programming}
+%\cconcept{Logic programming}
+\smallskip
+
+\topic{Natural Language Processing}
+\smallskip
+
+\sconcept{Optical character recognition (OCR)}
+\sconcept{Grammatical Inference}
+\sconcept{Parsing}
+\sconcept{Part-of-speech tagging}
+\sconcept{Sentiment analysis}
+\sconcept{Topic segmentation}
+\smallskip
+
+\topic{Visualization}
+\smallskip
+
+\subtopic{Theory}
+\cconcept{Color theory}
+\cconcept{Gestalt Principles}
+\cconcept{Small multiples}
+\cconcept{Data density}
+\cconcept{Data-Ink Maximization}
+\cconcept{Human visual perception}
+\smallskip
+
+\subtopic{Techniques and Styles}
+\cconcept{Correlation analysis}
+\cconcept{Deviation analysis}
+\cconcept{Distribution analysis}
+\cconcept{Multivariate analysis}
+\cconcept{Time series analysis}
+\cconcept{Stacked time series}
+\cconcept{Geo-spatial analysis}
+\cconcept{Mapping}
+\cconcept{Part-to-a-whole}
+\cconcept{Rankings}
+\bigskip
+
+\discipline{Datasets}
+\medskip
+
+\topic{Remote Sensing}
+\smallskip
+
+\cconcept{Landsat-7 \& Landsat-8}
+\cconcept{MODIS Terra \& Aqua}
+\cconcept{Sentinel-2}
+\cconcept{ICESat \& ICESat-2}
+\smallskip
+
+\topic{Re-Analysis}
+\smallskip
+\cconcept{ERA-5}
+\sconcept{GLODAP}
+\smallskip
+
+\topic{Other}
+\smallskip
+
+\cconcept{CMIP5/6 output}
+\smallskip
+
+\topic{Formats}
+\smallskip
+
+\subtopic{Vector Data}
+\cconcept{ESRI Shapefiles}
+\smallskip
+
+\subtopic{Raster Data}
+\cconcept{GeoTIFF}
+\cconcept{NetCDF}
+\smallskip
+
+\subtopic{Tabular Data}
+\cconcept{CSV}
+\cconcept{TSV}
+\cconcept{XLSX}
+\smallskip
+
+\subtopic{Other}
+\cconcept{JSON}
+\cconcept{XML}
+\bigskip
+
+\discipline{Software \& Tools}
+\medskip
+
+\cconcept{MS Excel}
+\cconcept{ArcGIS (or QGIS)}
+\sconcept{Climate Data Operators (CDO)}
+\sconcept{NetCDF Opererators (NCO)}
+\smallskip
+
+\topic{Workflow Management}
+\smallskip
+
+\cconcept{Snakemake}
+\cconcept{Continuous Integration (CI)}
+\smallskip
+
+\vspace{5ex}
+\hrule
+\hangindent=0em
+\textcolor{gray}{\textit{\footnotesize ---inspired by Kyle Bradbury's\\ \href{https://www.kylebradbury.org/docs/resources/Data-Science-Checklist.pdf}{Data Science Concept Checklist}]}}
+
+\end{multicols*}
+
+\end{flushleft}
+
+
+
+\end{document}
