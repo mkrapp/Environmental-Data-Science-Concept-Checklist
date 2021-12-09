@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper,left=10mm,right=10mm,bottom=20mm,top=35mm,headheight=65pt]{geometry}
+\usepackage[a4paper,left=10mm,right=10mm,bottom=25mm,top=35mm,headheight=65pt]{geometry}
 \usepackage{multicol}
 \usepackage{blindtext}
 \usepackage{xcolor}
@@ -8,7 +8,12 @@
 \usepackage{relsize}
 \usepackage{ifthen}
 \usepackage{wasysym}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0}
+]{doclicense}
 
 \renewcommand{\familydefault}{\sfdefault}
 \setlength\parindent{0em}
@@ -35,6 +40,7 @@
 \rhead{\ifthenelse{\value{page}=1}{\discipline{Discipline}\topic{Topic}\subtopic{Subtopic}\cconcept{Core Concept} \sconcept{Specialized Concept}\vspace{-1em}}{\today}}
 \lhead{\ifthenelse{\value{page}=1}{\vfill \LARGE{\textcolor{maincolor}{\textbf{Environmental Data Science}} Concept Checklist} \vfill \normalsize{\today} \vfill}{\LARGE{\textcolor{maincolor}{\textbf{Environmental Data Science}} Concept Checklist}}}
 \cfoot{\thepage}
+\rfoot{\scriptsize\doclicenseImage}
 \renewcommand{\footrulewidth}{0.5pt}
 
 % adapted from Kyle Bradbury's Data Science Concept Checklist (June 5, 2016)
